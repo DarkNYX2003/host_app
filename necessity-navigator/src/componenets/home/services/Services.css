@@ -1,0 +1,90 @@
+.services {
+    background: linear-gradient(180deg, #eff7fb, #d3edf5, #dbe6f4);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: 0;
+    padding: 2em 0;
+}
+
+.services h1 {
+    padding-top: 1em;
+    font-family: fantasy;
+    color: #34343b;
+    font-size: 3em;
+    padding-left: 3em;
+    text-align: left;
+}
+
+.serviceWrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    gap: 4em;
+    padding-left: 2em;
+    overflow-x: off;
+}
+
+
+
+.serviceContainer {
+    background: #f0f0db;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.8s ease-in-out;
+}
+
+
+
+.serviceIcon {
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: transform 0.5s ease-in-out;
+}
+
+.serviceDescription {
+    opacity: 0;
+    position: absolute;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.serviceTitle {
+    font-size: 2.5em;
+    font-family: cursive;
+    margin: 0;
+}
+
+.serviceDescription {
+    font-size: 2em;
+    color: #565050;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.serviceContainer:hover .serviceDescription {
+    opacity: 1;
+}
+
+.serviceContainer:hover .serviceIcon {
+    transform: scale(0);
+}
+
+.serviceLink {
+    text-decoration: none;
+    color: rgb(202, 82, 96);
+    font-weight: bold;
+}

@@ -14,7 +14,7 @@ root.render(
   <Auth0Provider
     domain={config.domain}
     clientId={config.clientId}
-    redirectUri="https://host-app-gules.vercel.app/home"
+    redirectUri="https://necessitynav.vercel.app/home"
     audience={config.audience}
     scope="openid profile email"
   >

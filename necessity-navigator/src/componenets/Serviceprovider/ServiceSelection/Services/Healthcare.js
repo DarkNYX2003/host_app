@@ -80,7 +80,7 @@ const RegisterHealthcareService = () => {
         console.log('Submission data:', submissionData);
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:8000/provideraccounts/register-healthcare/', {
+            const response = await fetch('https://necessitynavbackend.pythonanywhere.com/provideraccounts/register-healthcare/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

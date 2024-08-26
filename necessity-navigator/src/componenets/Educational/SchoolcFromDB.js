@@ -10,7 +10,7 @@ const ManualdataSchoolList = () => {
 
     const fetchServices = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/educational/global-schools/',
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/educational/global-schools/',
                 { ...location, filter },
                 {
                     headers: {

@@ -71,7 +71,7 @@ const RegisterTransportService = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:8000/provideraccounts/register-transport/', {
+            const response = await fetch('https://necessitynavbackend.pythonanywhere.com/provideraccounts/register-transport/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

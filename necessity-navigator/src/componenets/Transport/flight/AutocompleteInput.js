@@ -16,7 +16,7 @@ const AutocompleteInput = ({ label, onSelect }) => {
 
     const fetchSuggestions = async (query) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/tranport/flight/get_ita_code/', { location: query });
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/tranport/flight/get_ita_code/', { location: query });
             if (response.data.locations) {
                 setSuggestions(response.data.locations);
             } else {

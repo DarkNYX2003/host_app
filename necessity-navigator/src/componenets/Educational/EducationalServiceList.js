@@ -11,11 +11,11 @@ const EducationalServiceList = ({ serviceType }) => {
                 let endpoint = '';
 
                 if (serviceType === 'school') {
-                    endpoint = 'http://localhost:8000/api/educational/schools/';
+                    endpoint = 'https://necessitynavbackend.pythonanywhere.com/api/educational/schools/';
                 } else if (serviceType === 'tutor') {
-                    endpoint = 'http://localhost:8000/api/educational/tutors/';
+                    endpoint = 'https://necessitynavbackend.pythonanywhere.com/api/educational/tutors/';
                 } else if (serviceType === 'educational aid') {
-                    endpoint = 'http://localhost:8000/api/educational/aids/';
+                    endpoint = 'https://necessitynavbackend.pythonanywhere.com/api/educational/aids/';
                 }
 
                 const response = await fetch(endpoint, {

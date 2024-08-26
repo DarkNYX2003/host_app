@@ -20,7 +20,7 @@ const Dashboard = () => {
         const fetchUserData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('http://localhost:8000/provideraccounts/profile/', {
+                const response = await fetch('https://necessitynavbackend.pythonanywhere.com/provideraccounts/profile/', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const Dashboard = () => {
         const fetchUserServices = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch('http://localhost:8000/provideraccounts/profile/services/', {
+                const response = await fetch('https://necessitynavbackend.pythonanywhere.com/provideraccounts/profile/services/', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',

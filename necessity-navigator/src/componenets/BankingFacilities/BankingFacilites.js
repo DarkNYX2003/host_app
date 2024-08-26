@@ -22,7 +22,7 @@ const BankingFacilities = () => {
 
     const fetchFacilities = async (location) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/bank-facilities/', location);
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/bank-facilities/', location);
             const data = response.data;
             setFacilities(data.facilities || []);
             await calculateDistances(location, data.facilities, 'bank');
@@ -35,7 +35,7 @@ const BankingFacilities = () => {
 
     const fetchFacilitiesAtm = async (location) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/bank-facilities/atm/', location);
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/bank-facilities/atm/', location);
             const data = response.data;
             setFacilitiesAtm(data.facilitiesAtm || []);
             await calculateDistances(location, data.facilitiesAtm, 'atm');
@@ -52,7 +52,7 @@ const BankingFacilities = () => {
 
     const calculateDistances = async (location, services, serviceType) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/calculate_distance/', {
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/calculate_distance/', {
                 location,
                 services,
                 servicetype: serviceType,

@@ -84,7 +84,7 @@ const RegisterEducationalService = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:8000/provideraccounts/register-educational/', {
+            const response = await fetch('https://necessitynavbackend.pythonanywhere.com/provideraccounts/register-educational/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

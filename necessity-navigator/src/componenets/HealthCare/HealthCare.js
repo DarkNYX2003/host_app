@@ -29,7 +29,7 @@ const HealthcareFacilities = () => {
 
     const fetchFacilities = async (location) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/health_facilities/', location);
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/health_facilities/', location);
             const data = response.data;
             setFacilities(data.facilities);
             setLocalServices(data.nearby_healthcare_services);
@@ -46,7 +46,7 @@ const HealthcareFacilities = () => {
 
     const fetchDoctors = async (location) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/get_doctors/', location);
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/get_doctors/', location);
             setDoctors(response.data.doctors);
             setState(response.data.state);
 
@@ -57,7 +57,7 @@ const HealthcareFacilities = () => {
 
     const calculateDistances = async (location, facilities, localServices) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/calculate_distance/', {
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/calculate_distance/', {
                 location,
                 services: facilities,
                 local_services: localServices,
@@ -80,7 +80,7 @@ const HealthcareFacilities = () => {
 
     const fetchFacilityDetails = async (place_id) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/health_facilities/details/', { place_id });
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/health_facilities/details/', { place_id });
             setFacilityDetails(response.data);
         } catch (error) {
             alert('Error fetching facility details');

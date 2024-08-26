@@ -11,7 +11,7 @@ const FlightSearchForm = () => {
     const handleSearch = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/api/tranport/flight/flight_search/', {
+            const response = await axios.post('https://necessitynavbackend.pythonanywhere.com/api/tranport/flight/flight_search/', {
                 departure: departure.name,
                 destination: destination.name,
                 date: date,

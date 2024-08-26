@@ -38,7 +38,7 @@ const PicknDrop = () => {
 
     useEffect(() => {
         if (currentLocation) {
-            axios.get('http://localhost:8000/api/transport/transport-services/', {
+            axios.get('https://necessitynavbackend.pythonanywhere.com/api/transport/transport-services/', {
                 params: currentLocation
             }).then(response => {
                 setLocalServices(response.data.services);
@@ -76,11 +76,11 @@ const PicknDrop = () => {
                         lng: result.routes[0].legs[0].end_location.lng()
                     };
 
-                    axios.post('http://localhost:8000/api/transport/transport-services/ola-price/', { origin: pickupCoords, destination: destinationCoords })
+                    axios.post('https://necessitynavbackend.pythonanywhere.com/api/transport/transport-services/ola-price/', { origin: pickupCoords, destination: destinationCoords })
                         .then(response => setOlaPrice(response.data.price))
                         .catch(error => console.log(error));
 
-                    axios.post('http://localhost:8000/api/transport/transport-services/uber-price/', { origin: pickupCoords, destination: destinationCoords })
+                    axios.post('https://necessitynavbackend.pythonanywhere.com/api/transport/transport-services/uber-price/', { origin: pickupCoords, destination: destinationCoords })
                         .then(response => setUberPrice(response.data.price))
                         .catch(error => console.log(error));
                 } else {

@@ -10,7 +10,7 @@ const RentalService = () => {
         const location = JSON.parse(localStorage.getItem('location'));
         if (location) {
             const { lat, lng } = location;
-            axios.get('http://localhost:8000/api/transport/rental/', {
+            axios.get('https://necessitynavbackend.pythonanywhere.com/api/transport/rental/', {
                 params: { lat, lng }
             }).then(response => {
                 setRentalServices(response.data.services);

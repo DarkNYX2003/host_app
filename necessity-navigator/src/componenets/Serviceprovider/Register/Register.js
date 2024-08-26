@@ -12,7 +12,7 @@ const RegistrationForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/provideraccounts/register/', {
+            const response = await fetch('https://necessitynavbackend.pythonanywhere.com/provideraccounts/register/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

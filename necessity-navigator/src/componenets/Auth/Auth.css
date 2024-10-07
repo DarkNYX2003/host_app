@@ -2,97 +2,157 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f6f7fb;
+    background-color: #f1dec6;
     padding: 20px;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.header h1 {
-    font-size: 2.5em;
-    color: #ff6b6b;
-}
-
-.header p {
-    font-size: 1.2em;
-    color: #9a9a9a;
+    margin-top: 2vh;
 }
 
 .main-content {
     display: flex;
     width: 100%;
-    max-width: 1200px;
-    background: white;
+    max-width: 800px;
+    height: 40vh;
+    border: 3px solid rgba(38, 37, 37, 0.8);
+
+    background: rgba(255, 255, 255, 0.3);
+    /* Semi-transparent white background */
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    transition: all 0.8s ease;
+
+
+    backdrop-filter: blur(10px);
+    /* Apply the blur */
+    z-index: 1;
+
 }
 
-.left-section {
+.header_text {
+    color: #179bae;
+    font-size: 1.7em;
+    margin-bottom: 10px;
+    z-index: 1;
+    /* Ensure the text is above the background image */
+}
+
+.split-lines {
+    display: inline-block;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.split-lines::after {
+    content: "\A Services with ease!";
+    white-space: pre;
+}
+
+.left-section,
+.right-section {
     flex: 1;
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e0f7fa;
+    transition: flex 0.8s ease;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Slight transparency */
+    backdrop-filter: blur(10px);
+    /* Apply blur to the sections */
 }
 
-.left-section img {
-    max-width: 110%;
-    height: 118%;
-
-    opacity: 0.6;
-    border-radius: 20px;
+.left-section {
+    background-color: rgba(104, 196, 210, 0.4);
+    /* Semi-transparent teal */
+    color: #f1dec6;
 }
-
 
 .right-section {
-    flex: 1;
-    padding: 20px;
-    background: linear-gradient(135deg, #e7e8ee, #b382f0);
+    background-color: rgba(210, 192, 172, 0.4);
+    /* Semi-transparent tan */
+    color: #179bae;
+    position: relative;
 }
 
-.get-started,
-.join-us,
-.services-info {
-    margin-bottom: 20px;
+.left-hovered .left-section {
+    flex: 3;
 }
 
-.get-started h2,
+.right-hovered .right-section {
+    flex: 3;
+}
+
+.left-hovered .right-section,
+.right-hovered .left-section {
+    flex: 0.3;
+}
+
+.header {
+    text-align: center;
+    color: #179bae;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: rgba(116, 110, 102, 0.8);
+    /* Semi-transparent text */
+}
+
 .join-us h2 {
+    font-size: 2.5em;
+    color: rgba(23, 155, 174, 0.8);
+    /* Semi-transparent text */
+    margin-bottom: 10px;
+}
+
+.get-started h2 {
     font-size: 1.5em;
-    color: #740c71;
+    color: rgba(23, 155, 174, 0.8);
+    /* Semi-transparent text */
     margin-bottom: 10px;
 }
 
 .get-started button,
 .join-us button {
-    background-color: #ff6b6b;
+    background-color: rgba(95, 95, 95, 0.8);
+    /* Semi-transparent button */
     color: white;
     border: none;
     padding: 10px 20px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 40px;
     cursor: pointer;
     font-size: 1em;
+    /* Semi-transparent border */
+    transition: background-color 0.3s ease;
 }
 
 .get-started button:hover,
 .join-us button:hover {
-    background-color: #ff4d4d;
+    background-color: rgba(19, 19, 19, 0.8);
+    /* Darker button on hover */
 }
 
-.services-info p {
-    font-size: 1.2em;
-    color: #1f1c1c;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.services-info p svg {
-    color: #8a087f;
+.background-image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    /* Adjust to show more of the right section */
+    height: 100%;
+    z-index: 0;
+    clip-path: polygon(100% 0, 100% 100%, 5% 100%, 50% 0);
+    /* Adjust slant here */
+    background-image: url(./image.png);
+    /* Reference the local file */
+    background-size: cover;
+    /* Ensure the image covers the container */
+    background-position: center;
+    /* Keep the image centered */
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    /* Optional: adjust opacity */
 }

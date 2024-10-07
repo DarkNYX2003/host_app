@@ -47,7 +47,7 @@ const LoginForm = () => {
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 </div>
                 {error && <p className="error-message">{error}</p>}
-                <button type="submit" className="login-button">Login</button>
+                <button type="submit" className="login-button-1">Login</button>
                 <p>Dont have an id? <Link to='/service_provider/register'>Registerhere</Link></p>
             </form>
         </div>

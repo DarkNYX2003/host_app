@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Auth.css';
+import './Auth1.css';
 
 const FancyLandingPage = () => {
     const navigate = useNavigate();
@@ -11,7 +11,7 @@ const FancyLandingPage = () => {
                 <div className="header-content">
                     <h1>Empowering Your Services</h1>
                     <p>Connect with customers seeking healthcare, education, and transportation services.</p>
-                    <button onClick={() => navigate('/service_provider/register')} className="explore-button">Join Us Today</button>
+                    <button onClick={() => navigate('/service_provider/register')} className="explore-button">Join Us</button>
                 </div>
             </header>
 
@@ -33,10 +33,6 @@ const FancyLandingPage = () => {
                     </div>
                 </div>
             </section>
-            <section>
-                <h2>Return to consuming our service </h2>
-                <button onClick={() => navigate('/')} className="return-button">Return</button>
-            </section>
 
             <section className="get-started">
                 <h2>Get Started with Us</h2>
@@ -45,6 +41,11 @@ const FancyLandingPage = () => {
                 <div className="login-box">
                     <p>Already with us? <button onClick={() => navigate('/service_provider/login')} className="login-button">Login Here</button></p>
                 </div>
+                <section>
+                    <h2>Explore more services</h2>
+                    <button onClick={() => navigate('/')} className="return-button">Return</button>
+                </section>
+
             </section>
         </div>
     );

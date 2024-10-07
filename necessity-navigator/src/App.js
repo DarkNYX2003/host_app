@@ -20,7 +20,7 @@ import TransportServiceForm from './componenets/Serviceprovider/ServiceSelection
 import RegisterHealthcareService from './componenets/Serviceprovider/ServiceSelection/Services/Healthcare';
 import RegisterEducationalService from './componenets/Serviceprovider/ServiceSelection/Services/Educational';
 import ProtectedRoute from './componenets/ProtectedRoute';
-import ServiceproviderAuth from './componenets/Serviceprovider/Auth/Auth';
+import ServiceproviderAuth from './componenets/Serviceprovider/Auth/Auth1';
 import EducationalServiceSelectionPage from './componenets/Educational/EducationalserviceSelection';
 import PicknDrop from './componenets/Transport/PicknDrop/PicknDrop';
 import RentalService from './componenets/Transport/Rental/RentalService';
@@ -65,7 +65,7 @@ function App() {
           element={storedLocation ? <ProtectedRoute><BankingFacilities /></ProtectedRoute> : <Navigate to="/home/location" />}
         />
       </Routes>
-      <Footer />
+
     </div>
   );
 }
